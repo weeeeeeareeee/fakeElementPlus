@@ -4,7 +4,7 @@
 		<slot name="title"></slot>
 		<slot></slot>
 		<div class="card-footer">
-			<a href="">查看详情</a>
+			<el-button type="primary" link size="large" class="btn">查看详情</el-button>
 		</div>
 	</el-card>
 </template>
@@ -29,8 +29,18 @@ const props = defineProps({
 
 	&-footer {
 		width: 100%;
-		border-top: 1px solid #000;
+		border-top: 1px solid var(--el-border-color);
 		padding-top: 20px;
+
+		.btn {
+			width: 100%;
+			height: 100%;
+			margin: 0 auto;
+
+			&:hover {
+				background-color: var(--el-color-primary);
+			}
+		}
 	}
 }
 </style>
