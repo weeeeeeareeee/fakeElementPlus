@@ -1,7 +1,6 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { containerPlugin } from '@vuepress/plugin-container';
-
-
+import { createSidebarByDir } from './utils/tools';
 export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'fakeElementPlus',
@@ -14,7 +13,9 @@ export default defineUserConfig({
 			{ text: '资源', link: '/resource/index.md' },
 			{ text: 'Github', link: 'https://github.com/weeeeeeareeee/element-plus' },
 		],
-		sidebar: {},
+		sidebar: {
+			'/guide/': createSidebarByDir('guide'),
+		},
 	}),
 	plugins: [
 		containerPlugin({
@@ -26,7 +27,6 @@ export default defineUserConfig({
 					//开合标签
 					const sourceFilePath = tokens[idx + 2].children?.[0].content ?? '';
 					console.log(sourceFilePath);
-
 					return `<demo>${m[1]}`;
 				} else {
 					//闭合标签
