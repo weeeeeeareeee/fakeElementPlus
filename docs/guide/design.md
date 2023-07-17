@@ -38,4 +38,5 @@ lang: en-US
 
 - **Controlled consequences:** users should be granted the freedom to operate,
   including canceling, aborting or terminating current operation.
-<sideToc />
+
+<ttttoc />

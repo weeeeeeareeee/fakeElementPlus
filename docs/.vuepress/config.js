@@ -1,5 +1,7 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { containerPlugin } from '@vuepress/plugin-container';
+import { tocPlugin } from '@vuepress/plugin-toc';
+import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
 // import { createSidebarByDir } from './utils/tools';
 
 
@@ -42,6 +44,12 @@ export default defineUserConfig({
 					return '</demo>';
 				}
 			},
+		}),
+		tocPlugin({
+			componentName:'ttttoc',
+		}),
+		activeHeaderLinksPlugin({
+			headerLinkSelector: 'active',
 		}),
 	],
 });

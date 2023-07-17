@@ -70,4 +70,3 @@ natural. The navigation amount and text length are limited to the width of the t
 
 Suitable for sites with few navigation and large chunks.
 
-

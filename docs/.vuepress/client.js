@@ -26,8 +26,6 @@ export default defineClientConfig({
 		//路由功能
 		app.provide('router', router);
 	},
-	setup() {
-		console.log(usePageData());
-	},
+	setup() {},
 	rootComponents: [],
 });
