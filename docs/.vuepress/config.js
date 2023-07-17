@@ -1,11 +1,12 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { containerPlugin } from '@vuepress/plugin-container';
-import { createSidebarByDir } from './utils/tools';
+// import { createSidebarByDir } from './utils/tools';
+
+
 export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'fakeElementPlus',
 	description: '这是一个仿造ElementPlus的vuepress文档',
-	// navbar: [{ textL:'1',link:"https://www.baidu.com"}]
 	theme: defaultTheme({
 		navbar: [
 			{ text: '指南', link: '/guide/design.md' },
@@ -14,7 +15,15 @@ export default defineUserConfig({
 			{ text: 'Github', link: 'https://github.com/weeeeeeareeee/element-plus' },
 		],
 		sidebar: {
-			'/guide/': createSidebarByDir('guide'),
+			'/guide/': [
+				{
+					text: '基础',
+					children: [
+						{ text: '设计', link: '/guide/design.md' },
+						{ text: '导航', link: '/guide/nav.md' },
+					],
+				},
+			],
 		},
 	}),
 	plugins: [

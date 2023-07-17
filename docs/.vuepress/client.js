@@ -1,10 +1,10 @@
-import { defineClientConfig } from '@vuepress/client';
-import { useRoute, useRouter } from 'vue-router';
-import { provide } from 'vue';
+import { defineClientConfig, usePageData } from '@vuepress/client';
+
+
+import test from './layout/test.vue';
 import Element from 'element-plus';
 import 'element-plus/dist/index.css';
 import './public/style/index.css';
-import homePage from './components/homePage/index.vue';
 
 const componentFile = import.meta.glob('./components/*/*.vue');
 const componentList = Object.keys(componentFile).map((item) => {
@@ -26,6 +26,8 @@ export default defineClientConfig({
 		//路由功能
 		app.provide('router', router);
 	},
-	setup() {},
+	setup() {
+		console.log(usePageData());
+	},
 	rootComponents: [],
 });
